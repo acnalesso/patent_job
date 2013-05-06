@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PatentJob do
   before do
     @job = PatentJob.new
-    @file = "data.csv"
+    @job.stub(:parse).and_return(true)
     @job.stub(:update_patents).with(anything).and_return(true)
   end
 
