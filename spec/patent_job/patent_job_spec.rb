@@ -6,6 +6,7 @@ describe PatentJob do
     @job = PatentJob.new
     @file = "data.csv"
     @job.stub(:update_patents).with(anything).and_return(true)
+    @job.stub(:parse).and_return(true)
   end
 
   it "should replace existing patents with new patents" do
