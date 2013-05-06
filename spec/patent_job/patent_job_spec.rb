@@ -1,4 +1,3 @@
-$:.unshift(File.expand_path('../../../',__FILE__))
 require 'spec_helper'
 
 describe PatentJob do
@@ -6,7 +5,6 @@ describe PatentJob do
     @job = PatentJob.new
     @file = "data.csv"
     @job.stub(:update_patents).with(anything).and_return(true)
-    @job.stub(:parse).and_return(true)
   end
 
   it "should replace existing patents with new patents" do
