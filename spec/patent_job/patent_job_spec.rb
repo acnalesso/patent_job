@@ -7,12 +7,6 @@ describe PatentJob do
     @file = "data.csv"
     @job.stub(:update_patents).with(anything).and_return(true)
   end
-  it "should download the csv file from the ftp server" do
-    @job.should_receive(:download_file).and_return(@file)
-    f = File.read(@job.download_file)
-
-    f.include?('just 3 minutes').should be_true
-  end
 
   it "should replace existing patents with new patents" do
     @job.should_receive(:download_file).and_return(@file)
